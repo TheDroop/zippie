@@ -1,0 +1,1 @@
+Get-ChildItem $Path -force -Recurse | Select Name,Directory,@{Name="Owner";Expression={(Get-ACL $_.Fullname).Owner}},CreationTime,LastAccessTime
